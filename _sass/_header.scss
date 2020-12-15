@@ -1,0 +1,25 @@
+
+.header-container {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  min-height: 900px;
+  width: 100vw;
+}
+
+.header-content {
+  // padding: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 70%;
+  transform: translateY(-50%);
+  color: whitesmoke;
+  z-index: 1;
+  h1 {
+        text-shadow: -1px 3px 6px #0000007a;
+  }
+}
+

@@ -1,0 +1,29 @@
+.full-width-banner-1 {
+  clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
+}
+.banner-container {
+  position: relative;
+  height: 800px;
+  background-position: center;
+  z-index: 0;
+}
+.banner-content {
+  position: relative;
+  width:50%;
+  margin-right: auto;
+  padding: 3%;
+  background-color: #2b4074a2;
+  color: whitesmoke;
+  z-index: 10;
+  &::before {
+    content: '';
+    position: absolute;
+    mix-blend-mode: overlay;
+    top: -2rem;
+    left: -2rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid $light-color;
+    z-index: -1;
+  }
+}

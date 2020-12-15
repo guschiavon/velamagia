@@ -1,0 +1,146 @@
+@media (min-width: 300px) and (max-width: 700px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .header-container {
+    min-height: 550px;
+  }
+  .header-content {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .banner-content {
+    width: 100%;
+  }
+  [class*=padding-x] {
+    padding-left : 3%;
+    padding-right: 3%;
+  }
+  .img-txt-1,
+  .img-txt-2 {
+    .img-column .img-container {
+      height: 350px;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  .full-width-banner-1 {
+    clip-path: unset;
+  }
+  .nav-branding {
+    .clickable-logo {
+      width: 50px;
+    }
+    a {
+      font-size: 1.5rem;
+    }
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .banner-container {
+    height: 650px;
+  }
+  .banner-content {
+    background-color: $accent-color;
+    padding: 2rem 1rem;
+    &::before {
+      display: none;
+    } 
+  }
+  p,
+  span,
+  blockquote,
+  cite,
+  li,
+  ul,
+  ol,
+  small {
+    font-size: 1.1rem;
+  }
+  .img-txt-2 {
+    margin-top: -10%;
+  }
+  .burger {
+    display: block;
+    padding-right: 2.5rem;
+  }
+  .footer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .footer-branding {
+      justify-content: center;
+    }
+    .social {
+      margin-top: 2rem;
+    }
+  }
+  .social-link,
+  .nav-social {
+    width: auto;
+    padding: 0.5rem;
+    svg {
+      width: 45px;
+    }
+  }
+}
+@media (min-width: 701px) and (max-width: 768px) {
+  .nav-branding {
+    .clickable-logo {
+      width: 65px;
+    }
+    a {
+      font-size: 1.5rem;
+    }
+  }
+  .nav-link {
+    font-size: 0.9rem;
+  }
+  .padding-x-lg {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+  .banner-content {
+    width: 80%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-branding {
+    .clickable-logo {
+      width: 65px;
+    }
+    a {
+      font-size: 1.7rem;
+    }
+  }
+  .nav-link {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+  .padding-x-lg {
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+  .banner-content {
+    width: 100%;
+  }
+  .dropdown-container {
+    padding: 0.5rem;
+    > * {
+      list-style: none;
+    }
+    .dropdown-wrapper {
+      .dropdown-item {
+        font-size: 0.9rem;
+      }
+
+    }
+  }
+}

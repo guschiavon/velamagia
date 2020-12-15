@@ -1,0 +1,56 @@
+<div class="nav-container padding-x-lg padding-y-sm">
+    <div class="nav-branding">
+      <a href="/" class="clickable-logo" aria-label="Página Inicial"><img src="/assets/images/logo.png" alt="{{site.data.settings.global.title}}"></a>
+      <a href="/" aria-label="Página Inicial">Vela<strong>Magia</strong></a>
+    </div>
+    <nav class="desktop-nav">
+      {% for menu in site.data.settings.navigation.menus %}
+      {% if menu.dropdown %}
+      <button class="nav-link dropdown">
+        {{menu.name}}
+        <ul class="dropdown-container">
+          {% for submenu in menu.submenus %}
+          <li class="dropdown-wrapper">
+            <a href="{{submenu.url}}" class="dropdown-item">{{submenu.name}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </button>
+      {% else %}
+        <a href="{{menu.url}}" class="nav-link {%if menu.is_button %}btn{%endif%}">{{menu.name}}</a>
+      {% endif %}
+      {% endfor %}
+      {% for item in site.data.settings.global.social %}
+        <a href="{{item.url}}" class="nav-social" target="_blank" rel="noreferrer noopener" aria-label="Clique para acessar o {{item.icon}} da {{site.data.settings.global.title}}">{% include social-icons.html icon=item.icon %}</a>
+      {% endfor %}
+    </nav>
+    <button id="burger" class="burger" aria-label="Click to access the menu">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="mobile-nav" class="mobile-nav">
+      {% for menu in site.data.settings.navigation.menus %}
+      {% if menu.dropdown %}
+      
+      <ul class="dropdown nav-link">{{menu.name}}
+        {% for submenu in menu.submenus %}
+          <li class="dropdown-wrapper">
+            <a href="{{submenu.url}}" class="dropdown-item">{{submenu.name}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      
+      {% else %}
+        <a href="{{menu.url}}" class="nav-link">{{menu.name}}</a>
+      {% endif %}
+      {% endfor %}
+      <div>
+        {% for item in site.data.settings.global.social %}
+          <a href="{{item.url}}" class="nav-social" target="_blank" rel="noreferrer noopener" aria-label="Clique para acessar o {{item.icon}} da {{site.data.settings.global.title}}">{% include social-icons.html icon=item.icon %}</a>
+        {% endfor %}
+
+      </div>
+    </nav>     
+  </div>

@@ -1,0 +1,178 @@
+# Define the site's URL for the correct rendering of the sitemap.xml file
+url: 'https://smooth-hill.cloudvent.net'
+
+# Enable CloudCannon CMS interface
+cloudcannon:
+  data: true
+
+# Sass configuration
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Global upload directory for images
+uploads_dir: /assets/images
+
+# Paths
+## Global permalinks
+permalink: /:path
+
+# useful comments for CloudCannon interface
+_comments:
+  background: 'Escolha a cor de fundo da seção entre as opções: bg-light (cor clara), bg-dark (cor escura) e bg-accent (cor de destaque)'
+  keywords: 'Palavras-chave para os sites de busca'
+  main_image: 'A imagem principal da página'
+  description_text: 'Importante para o posicionamento nos sites de busca; utilizar palavras-chave e descrição do conteúdo em menos de 160 caracteres'
+  header_color: 'Escolha a cor do texto sobre a imagem principal; útil para modificar as cores de acordo com a imagem'
+  heading_html: 'Utilizar o tipo de texto Normal para manter uniformidade do layout'
+  content_html: 'Para estilizar o texto, utilisar as ferramentas de texto'
+  content_1_html: 'Para estilizar o texto, utilisar as ferramentas de texto'
+  content_2_html: 'Para estilizar o texto, utilisar as ferramentas de texto'
+  add_button: 'Caso o box seja marcado, um botão será disponibilizado na seção'
+  sections: 'Adicione seções extras na página'
+  background_image: 'Imagem de fundo da seção'
+
+## Collections permalinks
+collections:
+  cursos:
+    output: true
+    permalink: /cursos/:title
+  passeios:
+    output: true
+    permalink: /passeios/:title
+
+# Collection defaults
+defaults:
+  -
+    scope:
+      path: "/cursos"
+      type: "pages"
+    values:
+      layout: pages
+      title:
+      main_image:
+      description_text:
+      main_heading_html:
+      header_content_html:
+      sections: 
+  -
+    scope:
+      path: "/passeios"
+      type: "pages"
+    values:
+      layout: pages
+      title:
+      main_image:
+      description_text:
+      main_heading_html:
+      header_content_html:
+      header_color:
+      sections: 
+
+# Dependencies
+plugins:
+  - jekyll-sitemap
+  - jekyll-webp
+  # - jekyll-responsive-image
+
+# Configuration of the jekyll-responsive-image plugin
+# responsive_image:
+#   template: _includes/templates/image-tag-lazy.html
+#   sizes:
+#     - width: 360
+#     - width: 480
+#     - width: 600
+#     - width: 800
+#     - width: 1400
+#   base_path: assets/images
+#   output_path_format: assets/images/srcset/%{width}/%{basename}
+
+# Configuration of the jekyll-webp plugin    
+webp:
+  enabled: true
+  quality: 75
+  img_dir: ["/assets/images/"]
+  nested: true
+
+icons:
+ - "Facebook"  
+ - "Instagram"
+ - "YouTube"
+ - "Email"
+
+backgrounds:
+  - "bg-light"
+  - "bg-dark"
+  - "bg-accent"
+
+header_colors:
+  - "claro"
+  - "escuro"
+  - "destaque"
+
+
+sections: []
+_array_structures:
+  sections:
+    style: select
+    values:
+      - label: Overview
+        description: Um parágrafo de abertura para a página
+        icon: subject
+        value:
+          _id: overview
+          label: Overview
+          heading_html:
+          content_html:
+          add_button: false
+          button_text:
+          button_url:
+      - label: Image Boxes
+        description: Grid com imagens e descrição de conteúdo
+        icon: view_module
+        value:
+          _id: image-boxes
+          label: Image Boxes
+          imagem_1_image:
+          imagem_1_alt_text:
+          heading_1_html:
+          content_1_html:
+          imagem_2_image:
+          imagem_2_alt_text:
+          heading_2_html:
+          content_2_html:
+      - label: Imagem e Texto
+        description: Seção com uma imagem e espaço para content
+        icon: recent_actors
+        value:
+          _id: img-txt-1
+          label: Imagem e Texto
+          background:
+          heading_html:
+          content_html:
+          image:
+          image_alt_text:
+          button_text:
+          button_url:
+      - label: Inclusions
+        description: Seção para informar as inclusões do item       
+        icon: add_to_photos
+        value:
+          _id: inclusions
+          label: Inclusions
+          background:
+          heading_html:
+          inclusions_html:
+          button_text:
+          button_url:
+      - label: Full-Width Banner
+        description: Seção horizontal com imagem e box para conteúdo
+        icon:
+        value:
+          _id: full-width-banner
+          background_image:
+          heading_content:
+          content_html:
+          add_button: true  
+          button_text:
+          button_url:
